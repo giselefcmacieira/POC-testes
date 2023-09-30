@@ -67,3 +67,32 @@ describe("Movies API PUT/movie", () => {
         expect(result.status).toBe(httpStatus.CONFLICT)
     })
 })
+describe("Movies API GET/movie", () => {
+    it("should return status 200 and corect response", async () => {
+        await createMovie()
+        await createMovie()
+        await createMovie()
+
+        const result = await api.get("/movie")
+        expect(result.status).toBe(httpStatus.OK)
+        expect(result.body).toEqual(expect.arrayContaining([
+            expect.objectContaining({
+                id: expect.any(Number),
+                name: expect.any(String),
+                status: expect.any(Boolean),
+                type: expect.any(String),
+                comment: expect.any(String),
+                createdAt: expect.any(String),
+                platformId: expect.any(Number)
+            })
+        ]))
+        expect(result.body).toHaveLength(3)
+    })
+})
+describe("Movie API DELETE/movie", () => {
+    it("should return 200 when movie is deleted", async () => {
+        const movie = await createMovie()
+        const result = await api.delete(`/movie/${movie.id}`)
+        expect(result.status).toBe(httpStatus.OK)
+    })
+})
