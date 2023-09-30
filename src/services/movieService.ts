@@ -1,8 +1,8 @@
-import { badRequestError } from "@/errors/badRequest";
-import { conflictError } from "@/errors/conflict";
-import { ReadMovie, Resp } from "@/protocols/protocols";
-import { SelectMovies, UpdateMovie, movieRepository } from "@/repositories/movieRepository";
-import { CreateMovie } from "@/repositories/movieRepository";
+import { badRequestError } from "../errors/badRequest";
+import { conflictError } from "../errors/conflict";
+import { ReadMovie, Resp } from "../protocols/protocols";
+import { SelectMovies, UpdateMovie, movieRepository } from "../repositories/movieRepository";
+import { CreateMovie } from "../repositories/movieRepository";
 import { Movies } from "@prisma/client";
 
 function createMovie(movie: CreateMovie) {

@@ -1,6 +1,6 @@
-import prisma from "@/database/databaseConnection";
+import prisma from "../database/databaseConnection";
 import { Movies } from "@prisma/client";
-import { ReadMovie, Resp } from "@/protocols/protocols";
+import { ReadMovie, Resp } from "../protocols/protocols";
 
 export type CreateMovie = Omit<Movies, "id" | "createdAt">
 

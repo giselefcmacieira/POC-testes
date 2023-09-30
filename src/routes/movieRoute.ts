@@ -1,6 +1,6 @@
-import { deleteMovies, getMovies, postMovie, putMovie } from "@/controllers/movieControllers";
-import { validateSchema } from "@/middlewares/validatePostSchema";
-import { validatePutSchema } from "@/middlewares/validatePutSchema";
+import { deleteMovies, getMovies, postMovie, putMovie } from "../controllers/movieControllers";
+import { validateSchema } from "../middlewares/validatePostSchema";
+import { validatePutSchema } from "../middlewares/validatePutSchema";
 import { Router } from "express";
 
 const movieRouter = Router()

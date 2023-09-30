@@ -4,8 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/app.ts",
+    "prisma:migrate:dev": "prisma migrate dev",
+    "test:load-envs": "dotenv -e .env.test",
+    "test:coverage": "npm run test:load-envs -- jest -- --coverage",
+    "test:migration:run": "dotenv -e .env.test prisma migrate deploy",
+    "dev": "nodemon src/server.ts",
     "build": "npm i && tsc && npx tsc-alias",
     "start": "node dist/app.js"
   },
@@ -28,15 +31,24 @@
     "express-async-errors": "^3.1.1",
     "http-status": "^1.7.0",
     "joi": "^17.10.1",
-    "pg": "^8.11.3"
+    "pg": "^8.11.3",
+    "typescript-transform-paths": "^3.4.6"
   },
   "devDependencies": {
+    "@faker-js/faker": "^8.1.0",
     "@types/cors": "^2.8.14",
     "@types/dotenv": "^8.2.0",
     "@types/express": "^4.17.17",
+    "@types/jest": "^29.5.5",
+    "@types/node": "^20.8.0",
     "@types/pg": "^8.10.2",
+    "@types/supertest": "^2.0.13",
+    "dotenv-cli": "^7.3.0",
+    "jest": "^29.7.0",
     "nodemon": "^3.0.1",
     "prisma": "^5.3.1",
+    "supertest": "^6.3.3",
+    "ts-jest": "^29.1.1",
     "ts-node": "^10.9.1",
     "tsconfig-paths": "^4.2.0",
     "typescript": "^5.2.2"

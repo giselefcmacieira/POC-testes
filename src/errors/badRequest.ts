@@ -1,4 +1,4 @@
-import { error } from "@/protocols/protocols";
+import { error } from "../protocols/protocols";
 
 export function badRequestError(erro: string): error {
     return {

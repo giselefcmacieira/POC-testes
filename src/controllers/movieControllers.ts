@@ -1,6 +1,6 @@
-import { ReadMovie } from "@/protocols/protocols";
-import { CreateMovie, SelectMovies, UpdateMovie } from "@/repositories/movieRepository";
-import { movieServices } from "@/services/movieService";
+import { ReadMovie } from "../protocols/protocols";
+import { CreateMovie, SelectMovies, UpdateMovie } from "../repositories/movieRepository";
+import { movieServices } from "../services/movieService";
 import { SelectablePayloadFields } from "@prisma/client/runtime/library";
 import { Request, Response } from "express";
 import httpStatus from "http-status";

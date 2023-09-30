@@ -1,4 +1,4 @@
-import { CreateMovie } from "@/repositories/movieRepository";
+import { CreateMovie } from "../repositories/movieRepository";
 import Joi from "joi";
 
 export const movieSchema = Joi.object<CreateMovie>({

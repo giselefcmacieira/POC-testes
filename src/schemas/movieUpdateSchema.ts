@@ -1,4 +1,4 @@
-import { UpdateMovie } from "@/protocols/protocols";
+import { UpdateMovie } from "../protocols/protocols";
 import Joi from "joi";
 
 export const movieUpdateSchema = Joi.object<UpdateMovie>({
